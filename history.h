@@ -1,0 +1,12 @@
+typedef struct history History;
+History* history__init();
+int history__index(History const *self);
+int history__size(History const *self);
+char* history__get(History *self, unsigned int const index);
+void history__add(History *self, char const *to_add);
+void history__remove(History *self);
+int history__write(History *self, char const *file_name);
+History* history__load(History *self, char const *file_name);
+void history__destroy(History *self);
+void history__print(History const *self);
+void history__print_backwards(History const *self);
